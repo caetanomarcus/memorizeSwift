@@ -8,24 +8,43 @@
 import SwiftUI
 
 struct ContentView: View {
-    let emojis : [String] = ["😍", "😇", "😜", "😡"]
+    
+    let emojisDictionary = ["faces": ["😍", "😇", "😍", "😇"], "objects": ["⌚️", "💻", "⌚️", "💻"], "foods": ["🍎", "🍇", "🍎", "🍇"] ]
+    @State var emojis : [String] = ["😍", "😇", "😍", "😇"]
     @State var cardCount: Int = 4
     var body: some View {
         VStack {
+            title
+            themes
+            Spacer()
             ScrollView {
                 cards
             }
-            Spacer()
-            cardCountAdjusters
 
         }.padding()
     }
     
+    var title: some View {
+        Text("Memorize")
+            .font(.largeTitle)
+            .bold()
+            .foregroundStyle(.teal)
+    }
+    
+    var themes: some View {
+        HStack {
+            themeSelector(title: "faces")
+            themeSelector(title: "objects")
+            themeSelector(title: "foods")
+        }
+    }
+    
     var cards: some View {
         LazyVGrid (columns: [GridItem(.adaptive(minimum: 120))]) {
+            let shuffledCards: [String] = emojis.shuffled()
             ForEach(0..<cardCount, id: \.self) { index in
-                CardView(content: emojis[index])
-                    .aspectRatio(2/3, contentMode: .fit)
+                CardView(content: shuffledCards[index])
+                    .aspectRatio(2/2.8, contentMode: .fit)
             }
         }
     }
@@ -49,6 +68,15 @@ struct ContentView: View {
         .disabled(cardCount + offset < 1 || cardCount + offset > emojis.count)
     }
     
+    func themeSelector(title : String) -> some View {
+        Button(action: {
+            emojis = emojisDictionary[title]!
+        }, label: {
+            Text(title.capitalized).foregroundStyle(.white)
+        })
+        .padding().border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/).cornerRadius(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/).background(.blue)
+    }
+    
     var cardRemover: some View {
         return cardCountAdjuster(by: -1, symbol: "rectangle.stack.badge.minus.fill")
     }
@@ -56,6 +84,7 @@ struct ContentView: View {
     var cardAdder: some View {
         cardCountAdjuster(by: 1, symbol: "rectangle.stack.badge.plus.fill")
     }
+    
 }
 
 struct CardView: View {
@@ -71,6 +100,7 @@ struct CardView: View {
                     .strokeBorder(lineWidth: 2.0)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                 Text(content)
+                    .font(.largeTitle)
             }.opacity(isFaceUp ? 1 : 0)
             base.fill().opacity(isFaceUp ? 0 : 1)
         }.onTapGesture {
