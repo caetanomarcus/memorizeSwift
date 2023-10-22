@@ -7,16 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FFB34CC52AE3463200C919C0 /* MemorizeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB34CC42AE3463200C919C0 /* MemorizeApp.swift */; };
-		FFB34CC72AE3463200C919C0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB34CC62AE3463200C919C0 /* ContentView.swift */; };
+		FF8001AF2AE5B69F0081E692 /* MemorizeGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8001AE2AE5B69F0081E692 /* MemorizeGame.swift */; };
+		FF8001B12AE5B8E40081E692 /* EmojiMemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF8001B02AE5B8E40081E692 /* EmojiMemoryGame.swift */; };
+		FFB34CC52AE3463200C919C0 /* MemoryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB34CC42AE3463200C919C0 /* MemoryApp.swift */; };
+		FFB34CC72AE3463200C919C0 /* EmojiMemoryGameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB34CC62AE3463200C919C0 /* EmojiMemoryGameView.swift */; };
 		FFB34CC92AE3463400C919C0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB34CC82AE3463400C919C0 /* Assets.xcassets */; };
 		FFB34CCC2AE3463400C919C0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFB34CCB2AE3463400C919C0 /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FF8001AE2AE5B69F0081E692 /* MemorizeGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeGame.swift; sourceTree = "<group>"; };
+		FF8001B02AE5B8E40081E692 /* EmojiMemoryGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGame.swift; sourceTree = "<group>"; };
 		FFB34CC12AE3463200C919C0 /* Memorize.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Memorize.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		FFB34CC42AE3463200C919C0 /* MemorizeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemorizeApp.swift; sourceTree = "<group>"; };
-		FFB34CC62AE3463200C919C0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FFB34CC42AE3463200C919C0 /* MemoryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryApp.swift; sourceTree = "<group>"; };
+		FFB34CC62AE3463200C919C0 /* EmojiMemoryGameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiMemoryGameView.swift; sourceTree = "<group>"; };
 		FFB34CC82AE3463400C919C0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFB34CCB2AE3463400C919C0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -51,8 +55,10 @@
 		FFB34CC32AE3463200C919C0 /* Memorize */ = {
 			isa = PBXGroup;
 			children = (
-				FFB34CC42AE3463200C919C0 /* MemorizeApp.swift */,
-				FFB34CC62AE3463200C919C0 /* ContentView.swift */,
+				FFB34CC42AE3463200C919C0 /* MemoryApp.swift */,
+				FFB34CC62AE3463200C919C0 /* EmojiMemoryGameView.swift */,
+				FF8001AE2AE5B69F0081E692 /* MemorizeGame.swift */,
+				FF8001B02AE5B8E40081E692 /* EmojiMemoryGame.swift */,
 				FFB34CC82AE3463400C919C0 /* Assets.xcassets */,
 				FFB34CCA2AE3463400C919C0 /* Preview Content */,
 			);
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFB34CC72AE3463200C919C0 /* ContentView.swift in Sources */,
-				FFB34CC52AE3463200C919C0 /* MemorizeApp.swift in Sources */,
+				FFB34CC72AE3463200C919C0 /* EmojiMemoryGameView.swift in Sources */,
+				FFB34CC52AE3463200C919C0 /* MemoryApp.swift in Sources */,
+				FF8001AF2AE5B69F0081E692 /* MemorizeGame.swift in Sources */,
+				FF8001B12AE5B8E40081E692 /* EmojiMemoryGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
